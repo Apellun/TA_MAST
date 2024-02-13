@@ -10,7 +10,7 @@ from client.utils import send_data_request, get_data_request
 
 class SuccessPopup(QMessageBox):
     def __init__(self):
-        QMessageBox.__init__(self)
+        super().__init__()
         
         self.setWindowTitle("Успешно")
         self.setText("Данные отправлены на сервер")
@@ -18,7 +18,7 @@ class SuccessPopup(QMessageBox):
 
 class ErrorPopup(QMessageBox):
     def __init__(self, e):
-        QMessageBox.__init__(self)
+        super().__init__()
         self.e = e
         
         self.setWindowTitle("Ошибка")
