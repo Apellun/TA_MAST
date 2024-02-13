@@ -8,13 +8,17 @@ def validate_data(data):
     for field in expected_fields:
         if not data.get(field):
             raise Exception(f"Поле {field} не может быть пустым.")
+    
     if not isinstance(data.get("push_num"), int):
         raise Exception("Неправильный формат: push_num должно быть целым числом")
+   
     try:
         data["created_datetime"] = datetime.strptime(data["created_datetime"], '%Y%m%d %H:%M:%S')
     except:
         raise Exception("Неправильный формат даты.")
+    
     return data
+
 
 def rows_to_dict(rows: List[Row]):
     data = []
