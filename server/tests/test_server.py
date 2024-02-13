@@ -2,6 +2,7 @@ from unittest.mock import patch
 
 
 class TestServer:
+    
     def test_correct_post_request(self, client):
         with patch('server.views.post_view.sqlite3.connect') as mock_connect:
             mock_cursor = mock_connect.return_value.__enter__.return_value.cursor

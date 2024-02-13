@@ -2,6 +2,7 @@ import sys
 from PyQt6.QtWidgets import QApplication
 from client.interface import MainWindow, ErrorPopup
 
+
 if __name__ == "__main__":
     try:
         app = QApplication(sys.argv)
