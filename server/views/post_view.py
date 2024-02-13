@@ -1,5 +1,5 @@
 import sqlite3
-from datetime import datetime
+
 from flask import request, Response
 from flask.views import View
 from server.const import DATABASE_PATH
@@ -14,7 +14,7 @@ class PostView(View):
             data = request.json
             
             try:
-                validate_data(data)
+                validated_data = validate_data(data)
             except Exception as e:
                 return Response(f"Некорректные данные.\n{e}", status=400)
             
@@ -23,7 +23,7 @@ class PostView(View):
                     cursor = connection.cursor()
                     cursor.execute(
                         INSERT_ENTRY,
-                        (datetime.strptime(data.get("created_datetime"), '%Y%m%d %H:%M:%S'), data.get("content"), data.get("push_num"))
+                        (validated_data.get("created_datetime"), validated_data.get("content"), validated_data.get("push_num"))
                     )
                     connection.commit()
                     return Response("OK", status=200)
