@@ -19,6 +19,7 @@ class SuccessPopup(QMessageBox):
 class ErrorPopup(QMessageBox):
     def __init__(self, e):
         super().__init__()
+        
         self.e = e
         
         self.setWindowTitle("Ошибка")
