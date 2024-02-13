@@ -1,1 +1,6 @@
 server/database.db
+.gitignore
+client/__pycache__
+server/__pycache__
+server/views/__pycache__
+*.pyc
