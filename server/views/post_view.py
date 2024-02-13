@@ -1,5 +1,4 @@
 import sqlite3
-
 from flask import request, Response
 from flask.views import View
 from server.const import DATABASE_PATH
