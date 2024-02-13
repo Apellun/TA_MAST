@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtGui import QStandardItemModel, QStandardItem, QGuiApplication
 from PyQt6.QtCore import QDateTime
-from utils import send_data_request, get_data_request
+from client.utils import send_data_request, get_data_request
 
 
 class SuccessPopup(QMessageBox):

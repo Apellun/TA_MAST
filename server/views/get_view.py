@@ -1,9 +1,9 @@
 import sqlite3
 from flask import request, Response
 from flask.views import View
-from const import DATABASE_PATH
-from db_utils.commands import GET_ALL_ENTRIES
-from utils import rows_to_dict
+from server.const import DATABASE_PATH
+from server.db_utils.commands import GET_ALL_ENTRIES
+from server.utils import rows_to_dict
 
 
 class GetView(View):

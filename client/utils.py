@@ -2,7 +2,7 @@ import requests
 from requests.models import Response
 from requests.exceptions import ConnectionError
 from typing import List, Dict
-from const import GET_URL, POST_URL
+from client.const import GET_URL, POST_URL
 
 
 def check_satus_code(url: str, response: Response) -> None:

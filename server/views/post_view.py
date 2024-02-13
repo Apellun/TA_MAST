@@ -2,9 +2,9 @@ import sqlite3
 from datetime import datetime
 from flask import request, Response
 from flask.views import View
-from const import DATABASE_PATH
-from db_utils.commands import INSERT_ENTRY
-from utils import validate_data
+from server.const import DATABASE_PATH
+from server.db_utils.commands import INSERT_ENTRY
+from server.utils import validate_data
           
             
 class PostView(View):

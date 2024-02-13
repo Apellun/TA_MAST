@@ -1,6 +1,6 @@
 import sys
 from PyQt6.QtWidgets import QApplication
-from interface import MainWindow, ErrorPopup
+from client.interface import MainWindow, ErrorPopup
 
 if __name__ == "__main__":
     try:
@@ -11,5 +11,5 @@ if __name__ == "__main__":
         
     except Exception as e:
         window.close()
-        popup = ErrorPopup(f"Ошибка во время исполнения программы.\{e}")
+        popup = ErrorPopup(f"Ошибка во время исполнения программы.\n{e}")
         popup.exec()

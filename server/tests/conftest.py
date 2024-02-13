@@ -1,5 +1,4 @@
 import pytest
-from flask.testing import FlaskClient
 from server.factory import create_app
 
 
