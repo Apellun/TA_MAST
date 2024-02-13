@@ -17,6 +17,7 @@ class PostView(View):
                 validate_data(data)
             except Exception as e:
                 return Response(f"Некорректные данные.\n{e}", status=400)
+            
             try:
                 with sqlite3.connect(DATABASE_PATH) as connection:
                     cursor = connection.cursor()
@@ -26,10 +27,6 @@ class PostView(View):
                     )
                     connection.commit()
                     return Response("OK", status=200)
-                
-            except sqlite3.IntegrityError as e:
-                print(e)
-                return Response(f"Некорректные данные. {e}", status=400)
             except Exception as e:
                 print(e)
                 return Response("Ошибка сервера", status=500)
