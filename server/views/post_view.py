@@ -12,7 +12,6 @@ class PostView(View):
     def dispatch_request(self):
         if request.method == 'POST':
             data = request.json
-            print(type(data))
             
             try:
                 validate_data(data)

@@ -1,10 +1,10 @@
 from PyQt6.QtWidgets import (
-    QMainWindow, QWidget,
+    QMainWindow, QWidget, QScrollBar,
     QLineEdit, QListView, QPushButton,
     QVBoxLayout, QMessageBox,
 )
 from PyQt6.QtGui import QStandardItemModel, QStandardItem, QGuiApplication
-from PyQt6.QtCore import QDateTime
+from PyQt6.QtCore import QDateTime, Qt
 from client.utils import send_data_request, get_data_request
 
 
@@ -49,7 +49,15 @@ class MainWindow(QMainWindow):
         
         self.list_view = QListView()
         layout.addWidget(self.list_view)
-        
+
+        scroll_bar_vertical = QScrollBar()
+        scroll_bar_vertical.setOrientation(Qt.Orientation.Vertical)
+        self.list_view.setVerticalScrollBar(scroll_bar_vertical)
+
+        scroll_bar_horizontal = QScrollBar()
+        scroll_bar_horizontal.setOrientation(Qt.Orientation.Horizontal)
+        self.list_view.setHorizontalScrollBar(scroll_bar_horizontal)
+    
         self.send_post_button = QPushButton("Отправить данные")
         self.send_post_button.clicked.connect(self.send_data)
         layout.addWidget(self.send_post_button)
